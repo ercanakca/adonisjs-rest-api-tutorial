@@ -1,0 +1,8 @@
+@layout('layout.app')
+
+@section('content')
+  @set('title', 'Tutorial')
+ @component('components.alert', { color: 'info' })
+       <p class="text-sm">welcome!</p>
+     @endcomponent
+@endsection

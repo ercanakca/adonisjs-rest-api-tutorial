@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{-- Meta Information --}}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  {{-- Title --}}
+  <title>{{ title }} | Adonis</title>
+
+  {{-- CSS --}}
+  {{ style('/app.css') }}
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "5f8517bd-16a5-4064-80d8-8d2ea6f0653b",
+      });
+    });
+  </script>
+</head>
+<body class="bg-grey-lighter">
+  {{--
+    Include a partial into the view
+    ref: http://edge.adonisjs.com/docs/partials
+    --}}
+  @include('layout.partials.header')
+
+  @include('layout.partials.jumbotron')
+
+  <div class="container mx-auto px-4 mt-8">
+    {{--
+      Display the section content
+      ref: http://edge.adonisjs.com/docs/layouts#_basic_example
+      --}}
+    @!section('content')
+  </div>
+
+  {{-- Scripts --}}
+  {{-- script('/app.js') --}}
+</body>
+</html>
